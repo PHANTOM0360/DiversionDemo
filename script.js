@@ -16,7 +16,7 @@ document.addEventListener('scroll', function() {
 
         // Define scaling factor based on scroll position
         // Starts at 0.5 and goes up to 1.5
-        const scale = Math.min(Math.max(0.5, 0.5 + (scrollPosition / subsectionHeight)), 1.5);
+        const scale = Math.min(Math.max(0.5, 0.5 + (scrollPosition / subsectionHeight)), 1);
 
         // Apply the scale transformation
         subVideoBox.querySelector('video').style.transform = `scale(${scale})`;
