@@ -52,7 +52,7 @@ body {
 
 .sub-video-box {
     width: 100%;
-    background-color: black;
+    background-color: #f4ddb4;
     margin-top: 20px; /* Space between grid and sub-video-box */
     padding: 20px; /* Optional padding */
     box-sizing: border-box; /* Ensure padding doesn't affect the width */
@@ -66,4 +66,20 @@ body {
     left: 50%;
     transform: translate(-50%, -105%);
     z-index: 1;
+}
+.sub-video-box {
+    background-color: black;
+    margin-top: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
+}
+
+.sub-video-box video {
+    width: 100%;
+    height: auto;
 }
