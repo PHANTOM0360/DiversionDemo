@@ -1,0 +1,69 @@
+body {
+    background-image: url('page-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;
+}
+
+.logo-section {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    overflow: hidden; /* Prevent overflow */
+}
+
+.logo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.logo video {
+    max-width: 100%;
+    height: auto;
+}
+
+.subsection {
+    width: 100%;
+    background-color: #000000;
+    min-height: 100vh; 
+    padding-top: 20px;
+    border-top: 20px solid #f4ddb4;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+
+}
+
+.grid {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    transform: translateY(-20px);
+}
+
+.sub-video-box {
+    width: 100%;
+    background-color: black;
+    margin-top: 20px; /* Space between grid and sub-video-box */
+    padding: 20px; /* Optional padding */
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+    position: relative;
+}
+
+.moon {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -105%);
+    z-index: 1;
+}
