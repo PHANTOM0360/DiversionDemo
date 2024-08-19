@@ -21,8 +21,8 @@ document.addEventListener('scroll', function() {
         // Apply the scale transformation
         subVideoBox.querySelector('video').style.transform = `scale(${scale})`;
 
-        // if (scrollPosition >= subsectionHeight) {
-        //     window.scrollTo(0, subsectionHeight);
-        // }
+         if (scrollPosition >= subsectionHeight) {
+             window.scrollTo(0, subsectionHeight);
+         }
     }
 });

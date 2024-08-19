@@ -47,7 +47,7 @@ body {
 .grid {
     width: 100%;
     height: auto; /* Maintain aspect ratio */
-    transform: translateY(-20px);
+    transform: translateY(-30px);
 }
 
 .sub-video-box {
