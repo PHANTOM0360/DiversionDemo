@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 body {
     background-image: url('page-background.png');
     background-repeat: no-repeat;
@@ -100,19 +101,22 @@ body {
     color: #f3e6c0;
     text-decoration: solid;
     font-weight: 200; /* Use font-weight for bold text */
-    font-size: 3em;
-    font-family: 'Haettenschweiler', sans-serif; /* Ensure font family is properly specified */
+    font-size: 2.3em;
+    font-family: 'Press Start 2P', sans-serif; /* Ensure font family is properly specified */
 }
 
 .btn {
     background-color: #000000;
-    margin-top: 42px;
+    margin-top: 72px;
     padding: 0.5em;
     width: 200px;
+    height: 200px;
     text-align: center;
     border-radius: 10px;
     position: relative; /* Change to relative to work with pseudo-elements */
     font-weight: bold;
+    border: none; /* Remove any actual border */
+    box-shadow: none;
 }
 
 @property --angle {
@@ -126,19 +130,23 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: conic-gradient(from var(--angle), #86380E, rgb(255, 137, 18), black, #C65D22);
+    background: none;
     top: 49%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -49%);
     z-index: -1;
     padding: 3px;
     border-radius: 10px;
-    animation: spin 3s linear infinite;
 }
 
 .btn::before {
     filter: blur(1.5rem);
     opacity: 0.5;
+}
+
+.btn:hover::after, .btn:hover::before {
+    background-image: conic-gradient(from var(--angle), #86380E, rgb(255, 137, 18), black, #C65D22);
+    animation: spin 3s linear infinite;
 }
 
 @keyframes spin {
@@ -152,10 +160,43 @@ body {
 
 .big-btn {
     width: 92%; 
- margin-top: 20px; /* Space between small buttons and big button */
+    margin-top: 20px; /* Space between small buttons and big button */
 }
 
 .small-btn {
     margin: 60px;
-    width: 500px; /* Adjust width as needed */
+    width: 400px; /* Adjust width as needed */
+}
+
+.popup-section {
+    position: relative;
+    margin-top: 20px;
+}
+
+.popup-content {
+    display: none;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+}
+
+#about h2 {
+    color: blue;
+    text-align: center;
+}
+
+#time h2 {
+    color: red;
+    text-align: center;
+}
+
+#registration h2 {
+    color: purple;
+    text-align: center;
+}
+
+#chatbot h2 {
+    color: green;
+    text-align: center;
 }

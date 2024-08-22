@@ -11,7 +11,6 @@ document.addEventListener('scroll', function() {
     if (isInView) {
         // Calculate the amount scrolled within the subsection
         const scrollPosition = window.scrollY - subsection.offsetTop;
-        const boxHeight = subVideoBox.offsetHeight;
         const subsectionHeight = subsection.offsetHeight;
 
         // Define scaling factor based on scroll position
@@ -21,8 +20,35 @@ document.addEventListener('scroll', function() {
         // Apply the scale transformation
         subVideoBox.querySelector('video').style.transform = `scale(${scale})`;
 
-         if (scrollPosition >= subsectionHeight) {
-             window.scrollTo(0, subsectionHeight);
-         }
+        if (scrollPosition >= subsectionHeight) {
+            window.scrollTo(0, subsectionHeight);
+        }
     }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.btn');
+    const popupContents = document.querySelectorAll('.popup-content');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetId = button.textContent.trim().toLowerCase(); // Get button text to match with div id
+            const targetDiv = document.getElementById(targetId);
+
+            popupContents.forEach(div => {
+                if (div !== targetDiv) {
+                    div.style.display = 'none'; // Hide other divs
+                }
+            });
+
+            targetDiv.style.display = 'block'; // Show the target div
+        });
+    });
+
+    // Handle big button click separately for chatbot
+    const bigButton = document.querySelector('.big-btn');
+    bigButton.addEventListener('click', function() {
+        popupContents.forEach(div => div.style.display = 'none'); // Hide all divs
+        document.getElementById('chatbot').style.display = 'block'; // Show chatbot div
+    });
 });
