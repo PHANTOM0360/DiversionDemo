@@ -42,13 +42,15 @@ body {
 }
 .circle-container {
     position: absolute;
-    top: 142%;
+    top: 110%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 1800px;
-    height: 1900px;
+    width: 100vw; /* Responsive width based on viewport width */
+    height: 100vw; /* Maintain aspect ratio */
+    max-width: 1200px; /* Max width to prevent excessive growth */
+    max-height: 1200px; /* Max height to prevent excessive growth */
     border-radius: 50%;
-    z-index: 1;
+    z-index: 1; /* Ensure it is behind the moon */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,7 +58,7 @@ body {
 }
 
 .spinning-moon {
-    width: 100%;
+    width: 90%;
 }
 
 @keyframes spinMoon {
