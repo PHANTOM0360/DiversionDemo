@@ -10,10 +10,11 @@ body {
 
 .logo-section {
     position: relative;
-    height: 100vh; /* Full viewport height */
+    height: 120vh; /* Full viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
+    top: -15%;
     z-index: 0;
     overflow: hidden; /* Prevent overflow */
 }
@@ -28,7 +29,37 @@ body {
 
 .logo video {
     max-width: 100%;
+    transform-origin: center center;
     height: auto;
+}
+
+.circle-container {
+    position: absolute;
+    top: 162%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2100px; /* Adjust size as needed */
+    height: 2500px; /* Adjust size as needed */
+    border-radius: 50%;
+    z-index: 1; /* Ensure it is behind the moon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure the spinning-moon stays within the circle */
+}
+
+.spinning-moon {
+    width: 100%; /* Adjust size as needed */
+    
+}
+
+@keyframes spinMoon {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .subsection {
@@ -110,7 +141,7 @@ body {
     margin-top: 72px;
     padding: 0.5em;
     width: 200px;
-    height: 200px;
+    height: 100px;
     text-align: center;
     border-radius: 10px;
     position: relative; /* Change to relative to work with pseudo-elements */
